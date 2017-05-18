@@ -19,7 +19,7 @@ function TicketsTable () {
   return (
     <div className='tickets-table'>
       <TicketsRow title='1st round' date='18 May 2017' soldout />
-      <TicketsRow title='2nd round' date='25 May 2017' />
+      <TicketsRow title='2nd round' date='25 May 2017' soldout />
       <style jsx>{`
         .tickets-table {
           margin: 0 auto 30px;
@@ -33,8 +33,8 @@ function TicketsRow ({ title, date, soldout }) {
   return (
     <div className='tickets-row'>
       { soldout && <span className='indicator-soldout' /> }
-      <div className={`title ${soldout && 'text-soldout'}`}>{title}</div>
-      <div className={`date ${soldout && 'text-soldout'}`}>{date}</div>
+      <div className={`title ${soldout ? 'text-soldout' : ''}`}>{title}</div>
+      <div className={`date ${soldout ? 'text-soldout' : ''}`}>{date}</div>
       <style jsx>{`
         .indicator-soldout {
           width:100%;
